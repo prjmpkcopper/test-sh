@@ -1,0 +1,18 @@
+name: Main
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  log-user:
+    name: log-user
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Show User
+        run: |
+          echo "hello"
+          git --no-pager log -1 -s --format="%ae"
